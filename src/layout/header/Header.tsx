@@ -2,6 +2,6 @@
 
 export default function Header() {
   return (
-    <div>Header</div>
+    <h3 className="font-bold text-lg">ToDo List</h3>
   )
 }
