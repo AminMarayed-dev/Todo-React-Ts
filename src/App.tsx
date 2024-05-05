@@ -1,9 +1,12 @@
+import Layout from "./layout/Layout"
 
 
 function App() {
  
   return (
-   <div>Todo project</div>
+   <Layout>
+     <div>Todo</div>
+   </Layout>
   )
 }
 
