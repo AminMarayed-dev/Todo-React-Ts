@@ -1,6 +1,7 @@
 import Badge from "../badge/Badge";
 
-type TaskType = {
+export type TaskType = {
+  id?: number;
   title: string;
   priority: string;
   bgPriority: string;
@@ -14,9 +15,7 @@ function Task({ title, priority, bgPriority }: TaskType) {
         <h3>{title}</h3>
         <Badge priority={priority} bg={bgPriority} />
       </div>
-      <button className="bg-red-500 text-white px-1 rounded-lg">
-          Delete
-        </button>
+      <button className="bg-red-500 text-white px-1 rounded-lg">Delete</button>
     </div>
   );
 }

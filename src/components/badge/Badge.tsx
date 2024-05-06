@@ -7,6 +7,6 @@ type BadgeType = {
 
 export default function Badge({priority, bg}:BadgeType) {
   return (
-    <span className={`px-2 text-white bg-red-500 rounded-md text-sm ${bg}`}>{priority}</span>
+    <span className={`px-2 text-white rounded-md text-sm ${bg}`}>{priority}</span>
   )
 }

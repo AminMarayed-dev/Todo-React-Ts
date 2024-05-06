@@ -1,20 +1,25 @@
-import { ReactNode } from "react"
-import Header from "./header/Header"
-import Footer from "./footer/Footer"
-
+import { ReactNode } from "react";
+import Header from "./header/Header";
+import Footer from "./footer/Footer";
 
 type Props = {
-    children?:ReactNode
-}
+  children?: ReactNode;
+  onAddTask: (task: {
+    id:number,
+    title: string;
+    priority: string;
+    bgPriority: string;
+  }) => void;
+};
 
-function Layout({children}: Props) {
+function Layout({ children, onAddTask }: Props) {
   return (
-    <div>
-        <Header/>
-        {children}
-        <Footer/>
+    <div className="grid place-items-center mt-8 gap-3">
+      <Header />
+      {children}
+      <Footer onAddTask={onAddTask} />
     </div>
-  )
+  );
 }
 
-export default Layout
+export default Layout;
