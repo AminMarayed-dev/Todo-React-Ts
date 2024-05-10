@@ -7,6 +7,8 @@ type onAddTaskType = (task: {
   bgPriority: string;
 }) => void;
 
+
+
 export default function Footer({ onAddTask }: { onAddTask: onAddTaskType }) {
   const [title, setTitle] = useState("");
   const [priority, setPriority] = useState('Low');

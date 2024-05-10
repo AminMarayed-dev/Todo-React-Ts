@@ -6,7 +6,7 @@ const Tasks: Array<TaskType> = [];
 
 function App() {
   const [tasks, setTasks] = useState(Tasks);
-  const handleAddTask = ({ id,title, priority, bgPriority }: TaskType) => {
+  const handleAddTask = ({ id, title, priority, bgPriority }: TaskType) => {
     setTasks([
       ...tasks,
       {
@@ -18,21 +18,31 @@ function App() {
     ]);
   };
 
+  const handleDeleteTask = (id: number) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
-    <Layout onAddTask={handleAddTask}>
-      <div className="w-1/4 flex flex-col gap-2">
-        {tasks.length !== 0
-          ? tasks.map((task) => (
+    <div className="flex justify-center">
+      <Layout onAddTask={handleAddTask}>
+        <div className=" flex flex-col gap-2 px-7 w-full">
+          {tasks.length !== 0 ? (
+            tasks.map((task) => (
               <Task
                 key={task.id}
                 title={task.title}
                 priority={task.priority}
                 bgPriority={task.bgPriority}
+                id={task.id}
+                onDeleteTask={() => handleDeleteTask(task.id)}
               />
             ))
-          : "nothing Task"}
-      </div>
-    </Layout>
+          ) : (
+            <p className="text-center">nothing task</p>
+          )}
+        </div>
+      </Layout>
+    </div>
   );
 }
 
