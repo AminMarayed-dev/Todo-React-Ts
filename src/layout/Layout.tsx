@@ -15,7 +15,7 @@ type Props = {
 function Layout({ children, onAddTask }: Props) {
   return (
     <div>
-      <div className="flex flex-col justify-center items-center mt-24 gap-4  p-16 rounded-lg bg-white shadow-4 z-10 relative">
+      <div className="flex flex-col justify-center items-center mt-24 gap-4  p-16 rounded-lg bg-white shadow-4 z-10 relative h-[330px]">
         <Header />
         {children}
         <Footer onAddTask={onAddTask} />
